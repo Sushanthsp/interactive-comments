@@ -322,7 +322,7 @@ function HomePage() {
                     </div>
 
                     {showReply === item?._id ?
-                      <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#4338CA', margin: 'auto' }}>
+                      <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#fff', margin: 'auto' }}>
                         <textarea
                           rows={3}
                           value={commentsReplies}
@@ -395,7 +395,7 @@ function HomePage() {
 
                               {commentRepliesData?._id === replyItem?._id ?
 
-                                <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#4338CA', margin: 'auto' }}>
+                                <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#fff', margin: 'auto' }}>
                                   <textarea
                                     rows={3}
                                     value={commentsReplies} name="commentsReplies" onChange={(e) => {
@@ -419,7 +419,7 @@ function HomePage() {
 
                               {showReply === replyItem?._id ?
 
-                                <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#4338CA', margin: 'auto' }}>
+                                <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#fff', margin: 'auto' }}>
                                   <textarea
                                     rows={3}
                                     value={commentsReplies} name="commentsReplies" onChange={(e) => {
