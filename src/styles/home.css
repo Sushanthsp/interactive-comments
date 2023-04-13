@@ -1,0 +1,9 @@
+.custom-width {
+  width: 60vw;
+}
+
+@media (max-width: 768px) {
+  .custom-width {
+    width: 90vw;
+  }
+}
