@@ -2,6 +2,11 @@
   width: 60vw;
 }
 
+.custom-border {
+  border: 3px solid rgb(197 197 197);
+  border-radius: 8px;
+}
+
 @media (max-width: 768px) {
   .custom-width {
     width: 90vw;

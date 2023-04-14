@@ -25,7 +25,6 @@ export const register = (data) => {
       });
   });
 };
-
 export const verifyOtp = (data) => {
   return new Promise(async (resolve, reject) => {
     await request
@@ -39,6 +38,7 @@ export const verifyOtp = (data) => {
   });
 };
 
+//comments
 export const postComments = (data) => {
   return new Promise(async (resolve, reject) => {
     await request
@@ -68,7 +68,7 @@ export const updateComments = (id,data) => {
 export const updateVote = (id,data) => {
   return new Promise(async (resolve, reject) => {
     await request
-      .put(`/user/comments/${id}`, data)
+      .put(`/user/comments/score/${id}`, data)
       .then((res) => {
         resolve(res.data);
       })
@@ -104,7 +104,6 @@ export const getComments = () => {
   });
 };
 
-
 export const postReply= (id,data) => {
   return new Promise(async (resolve, reject) => {
     await request
@@ -134,7 +133,7 @@ export const updateReply= (id,replyId,data) => {
 export const updateReplyVote= (id,replyId,data) => {
   return new Promise(async (resolve, reject) => {
     await request
-    .put(`/user/comments/reply/${id}/${replyId}`, data)
+    .put(`/user/comments/reply/score/${id}/${replyId}`, data)
       .then((res) => {
         resolve(res.data);
       })
@@ -143,7 +142,6 @@ export const updateReplyVote= (id,replyId,data) => {
       });
   });
 };
-
 
 export const deleteReply = (id) => {
   return new Promise(async (resolve, reject) => {

@@ -58,7 +58,7 @@ export default function Login() {
                 navigate('/')
                 dispatch(actions.setLoggedIn(true))
                 dispatch(actions.setToken(res?.data?.token))
-                dispatch(actions.setUser(res?.data))
+                dispatch(actions.setUser(res?.data?.userData))
             }
             else {
                 setcatchError(res?.message)
