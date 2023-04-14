@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+Interactive Comments
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interactive Comments is a full-stack web application built with Node.js and MongoDB that allows users to leave comments, edit comments, and upvote/downvote comments. Users can also engage in threaded discussions about the comments.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+User Registration and Authentication: Users can register for an account with a unique username and password, and can authenticate themselves to log in and access the commenting features.
 
-### `npm start`
+Leave Comments: Users can leave comments on the website by providing their name, email, and comment text. Comments are displayed in a chronological order with the latest comments appearing at the top.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Edit and Delete Comments: Users can edit and delete their own comments. Edited comments are labeled with a timestamp to indicate that they have been modified.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Upvote and Downvote Comments: Users can upvote or downvote comments left by other users, and the total vote count is displayed for each comment. However, users cannot upvote or downvote their own comments.
 
-### `npm test`
+Threaded Discussions: Users can engage in threaded discussions about the comments by replying to specific comments. Replies are displayed indented below the parent comment, allowing for easy navigation and organization of discussions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Technologies Used
 
-### `npm run build`
+Front-end: React, Redux, Material-UI
+Back-end: Node.js, Express.js
+Database: MongoDB
+Authentication: jwt
+Deployment: Vercel
+styling: tailwind
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the application locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the repository from GitHub: git clone https://github.com/username/interactive-comments.git
 
-### `npm run eject`
+Install dependencies for both the client and server:
+cd interactive-comments/client
+npm install
+cd ../server
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
