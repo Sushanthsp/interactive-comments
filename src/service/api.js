@@ -117,6 +117,20 @@ export const postReply= (id,data) => {
   });
 };
 
+export const postReplyToReply= (id,data) => {
+  return new Promise(async (resolve, reject) => {
+    await request
+    .put(`/user/comments/reply/${id}`, data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((e) => {
+        resolve(e.response.data);
+      });
+  });
+};
+
+
 export const updateReply= (id,replyId,data) => {
   return new Promise(async (resolve, reject) => {
     await request

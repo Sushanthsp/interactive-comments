@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getComments, postComments, updateComments, deleteComments, updateVote, postReply, updateReply, updateReplyVote, deleteReply } from '../service/api'
+import { getComments, postComments, updateComments, deleteComments, updateVote, postReply, updateReply, updateReplyVote, deleteReply , postReplyToReply} from '../service/api'
 import '../styles/home.css'
 import { Button, Grid, Modal } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
@@ -189,14 +189,14 @@ function HomePage() {
   }
 
   const [commentRepliesData, setCommentRepliesData] = useState(null)
-  const updateCommentsReplies = (id, replyId) => {
+  const updateCommentsReplies = (id) => {
     if (!commentsReplies) {
       handleShowToast("error", "Please enter text")
       return
     }
     setCommentsRepliesLoading(true)
 
-    updateReply(id, replyId, { 'content': commentsReplies }).then(res => {
+    postReplyToReply(id, { 'content': commentsReplies }).then(res => {
       if (res?.status) {
         handleShowToast("success", "Replies updated successfully")
         setCommentsReplies(null)
@@ -477,10 +477,10 @@ function HomePage() {
                                       <span class="font-bold">{replyItem?.user?.name}</span>
                                       <span class="text-gray-600 text-sm">{formatDateAgo(replyItem?.createdAt)}</span>
                                     </div>
-                                  </div>
-                                  {/* <button onClick={() => {
-                                    setShowReply(replyItem?._id)
-                                  }} class="bg-indigo-700 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded">Reply</button> */}
+                                  </div> 
+                                  <button onClick={() => showReply ? setCommentRepliesData(null) : setCommentRepliesData({main:item?._id,peer:replyItem?._id})} className="bg-white   text-indigo-700 font-semibold py-2 px-4 rounded">
+                                    <ReplyIcon />
+                                  </button>
                                 </div>
                                 <div class="flex items-center mt-5">
                                   <div class="flex flex-col items-center mr-4">
@@ -527,7 +527,7 @@ function HomePage() {
                                 </div> : null}
                               </div>
 
-                              {commentRepliesData?._id === replyItem?._id ?
+                              {commentRepliesData?.peer === replyItem?._id ?
 
                                 <div className='custom-width' style={{ display: 'flex', flexDirection: 'row', bottom: 0, left: 0, right: 0, padding: '20px', backgroundColor: '#fff', margin: 'auto' }}>
                                   <textarea
@@ -538,7 +538,7 @@ function HomePage() {
                                     style={{ width: '100%', border: '2px solid #3f51b5', borderRadius: '4px', padding: '10px', resize: 'none', marginBottom: '10px', marginRight: '5px' }}
                                   />
                                   <button disabled={commentsRepliesLoading} onClick={() => {
-                                    updateCommentsReplies(item?._id, replyItem?._id)
+                                    updateCommentsReplies(commentRepliesData?.main)
                                   }} className="bg-indigo-700 border text-white font-semibold py-2 px-2 rounded" style={{ width: '100%', maxWidth: '80px', height: '40px' }}>
                                     {commentsRepliesLoading ? "Loading..." : "Update"}
                                   </button>
