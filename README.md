@@ -30,7 +30,7 @@ Installation
 
 To run the application locally, follow these steps:
 
-Clone the repository from GitHub: git clone https://github.com/username/interactive-comments.git
+Clone the repository from GitHub: git clone https://github.com/Sushanthsp/interactive-comments-backend
 
 
 
