@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import ReplyIcon from '@mui/icons-material/Reply';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const moment = require('moment');
 
@@ -321,19 +322,17 @@ function HomePage() {
           </div>
 
           <div>
-            <div className="mr-2 mb-2 sm:hidden flex">
+            <div className="mr-2  sm:hidden flex">
               <Button
                 variant="contained"
-                color="secondary"
+                color="default"
                 onClick={logout}
                 style={{
                   marginLeft: '10px',
                 }}
               >
-                <svg style={{ width: '24px', height: '24px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                </svg>
 
+                <LogoutIcon />
 
               </Button>
             </div>
@@ -355,7 +354,7 @@ function HomePage() {
       <div className="sm:h-screen h:5 flex flex-col mt-2 item-center m-auto custom-width" >
         <div className='custom-width '>
           <div style={{
-            marginBottom: '140px',
+            marginBottom: '160px',
             marginTop: '105px'
           }}>
             {

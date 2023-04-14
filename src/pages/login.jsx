@@ -61,7 +61,7 @@ export default function Login() {
                 dispatch(actions.setUser(res?.data?.userData))
             }
             else {
-                setcatchError(res?.message)
+                setcatchError(res?.message?.details?.length > 0 ? res?.message?.details[0]?.message : res?.message)
             }
         })
             .catch(err => {
@@ -88,6 +88,7 @@ export default function Login() {
         }
         setLoading(true)
         register(input).then(res => {
+            console.log("res",res?.message)
             if (res?.status) {
                 navigate('/')
                 dispatch(actions.setLoggedIn(true))
@@ -95,12 +96,13 @@ export default function Login() {
                 dispatch(actions.setUser(res?.data))
             }
             else {
-                setcatchError(res?.message)
+                setcatchError(res?.message?.details?.length > 0 ? res?.message?.details[0]?.message : res?.message)
             }
 
         })
             .catch(err => {
-                setcatchError(err)
+                console.log(err?.response?.data?.message)
+                setcatchError(err?.response?.data?.message?.details ? err?.response?.data?.message?.details[0]?.message : err?.response?.data?.message)
             })
             .finally(res => {
                 setLoading(false)
